@@ -14,9 +14,9 @@ const Hero = () => {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-end pb-16 sm:pb-24 lg:pb-32 text-white overflow-hidden">
-      {/* Background Image - Responsive */}
+      {/* Background Image - Fully Responsive */}
       <div 
-        className="absolute inset-0 bg-cover bg-center sm:bg-top bg-no-repeat" 
+        className="absolute inset-0 hero-bg-responsive"
         style={{
           backgroundImage: `url('/lovable-uploads/6e7ce3d3-4ab4-46aa-8cc0-0033f150d459.png')`
         }} 

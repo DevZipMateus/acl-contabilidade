@@ -121,6 +121,34 @@
 }
 
 @layer components {
+  /* Hero Background - Responsive Strategy */
+  .hero-bg-responsive {
+    @apply bg-cover bg-center bg-no-repeat;
+  }
+
+  /* Mobile: Focus on center, use contain to avoid cropping */
+  @media (max-width: 640px) {
+    .hero-bg-responsive {
+      @apply bg-contain bg-center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  /* Tablet: Balanced approach with slight top focus */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .hero-bg-responsive {
+      @apply bg-cover;
+      background-position: center top;
+    }
+  }
+
+  /* Desktop: Full cover with center positioning */
+  @media (min-width: 1025px) {
+    .hero-bg-responsive {
+      @apply bg-cover bg-center;
+    }
+  }
+
   /* Botões personalizados - Responsive */
   .btn-primary {
     @apply bg-primary hover:bg-primary/90 text-primary-foreground px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-primary/20 text-sm sm:text-base;
@@ -204,16 +232,32 @@
   body {
     @apply min-w-full;
   }
+  
+  /* Additional mobile optimizations for Hero */
+  #inicio {
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+  }
 }
 
 @media (min-width: 640px) and (max-width: 1024px) {
   .container-custom {
     @apply px-6;
   }
+  
+  /* Tablet specific optimizations */
+  #inicio {
+    min-height: 100vh;
+  }
 }
 
 @media (min-width: 1024px) {
   .container-custom {
     @apply px-8;
+  }
+  
+  /* Desktop optimizations */
+  #inicio {
+    min-height: 100vh;
   }
 }
