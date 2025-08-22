@@ -31,8 +31,8 @@ export const PROJECT_STATE: ProjectConfig = {
     showStatistics: false,
   },
   whatsapp: {
-    useCustomIcon: false, // Reverted to default MessageCircle icon
-    customIconPath: undefined,
+    useCustomIcon: true, // Now using custom WhatsApp image
+    customIconPath: "/lovable-uploads/fff59e4a-9b92-4869-b2cc-aed5cc596795.png",
   },
   header: {
     showTopBar: true,
