@@ -13,10 +13,10 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-end pb-32 text-white overflow-hidden">
-      {/* Background Image */}
+    <section id="inicio" className="relative min-h-screen flex items-end pb-16 sm:pb-24 lg:pb-32 text-white overflow-hidden">
+      {/* Background Image - Responsive */}
       <div 
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat" 
+        className="absolute inset-0 bg-cover bg-center sm:bg-top bg-no-repeat" 
         style={{
           backgroundImage: `url('/lovable-uploads/6e7ce3d3-4ab4-46aa-8cc0-0033f150d459.png')`
         }} 
@@ -35,16 +35,16 @@ const Hero = () => {
         />
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          {/* Main Content - INTENTIONALLY EMPTY */}
+          {/* Main Content - INTENTIONALLY EMPTY per PROJECT_STATE */}
           {/* 
             NOTE: Main content was removed and should remain empty
             PROJECT_STATE.hero.showMainContent = false
             Do not add title, subtitle, buttons, or statistics without explicit user request
           */}
           {PROJECT_STATE.hero.showMainContent && (
-            <div className="text-center space-y-8">
+            <div className="text-center space-y-6 sm:space-y-8">
               {/* This section is intentionally disabled */}
               {/* Content would go here if enabled */}
             </div>
@@ -52,10 +52,10 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">
-        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+      {/* Scroll Indicator - Responsive */}
+      <div className="absolute bottom-4 sm:bottom-6 lg:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle">
+        <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-2 sm:h-3 bg-white/70 rounded-full mt-1 sm:mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>

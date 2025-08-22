@@ -60,11 +60,23 @@
 
   body {
     @apply bg-background text-foreground font-spectral;
+    /* Prevent horizontal scroll */
+    overflow-x: hidden;
   }
 
-  /* Tipografia */
+  /* Tipografia - Responsive */
   h1, h2, h3, h4, h5, h6 {
     @apply font-spectral;
+  }
+
+  /* Prevent layout shifts */
+  img {
+    @apply max-w-full h-auto;
+  }
+
+  /* Ensure containers don't overflow */
+  * {
+    @apply box-border;
   }
 
   /* Animações personalizadas */
@@ -109,52 +121,52 @@
 }
 
 @layer components {
-  /* Botões personalizados */
+  /* Botões personalizados - Responsive */
   .btn-primary {
-    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-primary/20;
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-primary/20 text-sm sm:text-base;
   }
 
   .btn-accent {
-    @apply bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-accent/20;
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-accent/20 text-sm sm:text-base;
   }
 
   .btn-outline {
-    @apply border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-medium transition-all duration-300 focus:ring-4 focus:ring-primary/20;
+    @apply border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-lg sm:rounded-xl font-medium transition-all duration-300 focus:ring-4 focus:ring-primary/20 text-sm sm:text-base;
   }
 
   .btn-ghost {
-    @apply text-primary hover:bg-primary/10 px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:ring-4 focus:ring-primary/20;
+    @apply text-primary hover:bg-primary/10 px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 focus:ring-4 focus:ring-primary/20 text-sm sm:text-base;
   }
 
-  /* Cards */
+  /* Cards - Responsive */
   .card-primary {
-    @apply bg-card border border-border rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8;
+    @apply bg-card border border-border rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 lg:p-8;
   }
 
   .card-elevated {
-    @apply bg-card border border-border rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 p-8 hover:scale-105;
+    @apply bg-card border border-border rounded-xl sm:rounded-2xl shadow-xl sm:shadow-2xl hover:shadow-3xl transition-all duration-500 p-4 sm:p-6 lg:p-8 hover:scale-105;
   }
 
-  /* Seções */
+  /* Seções - Responsive */
   .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8;
   }
 
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto w-full;
   }
 
-  /* Textos */
+  /* Textos - Responsive */
   .text-hero {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-bold text-center leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center leading-tight;
   }
 
   .text-section-title {
-    @apply text-3xl sm:text-4xl font-bold text-center mb-4;
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-4;
   }
 
   .text-subsection-title {
-    @apply text-2xl sm:text-3xl font-semibold mb-6;
+    @apply text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6;
   }
 
   /* Gradientes */
@@ -170,8 +182,38 @@
     background: var(--gradient-hero);
   }
 
-  /* WhatsApp Button */
+  /* WhatsApp Button - Responsive */
   .whatsapp-float {
-    @apply fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 focus:ring-4 focus:ring-green-500/20;
+    @apply fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-xl sm:shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 focus:ring-4 focus:ring-green-500/20;
+  }
+
+  /* Responsive utilities */
+  .break-anywhere {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  .container-custom {
+    @apply px-4;
+  }
+  
+  /* Ensure no horizontal overflow on mobile */
+  body {
+    @apply min-w-full;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .container-custom {
+    @apply px-6;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    @apply px-8;
   }
 }
