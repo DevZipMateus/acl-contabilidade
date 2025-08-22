@@ -26,9 +26,9 @@ export interface ProjectConfig {
 // Current project state - DO NOT MODIFY without explicit user request
 export const PROJECT_STATE: ProjectConfig = {
   hero: {
-    showMainContent: false, // Intentionally empty - content was removed
-    showCallToAction: false,
-    showStatistics: false,
+    showMainContent: true, // Reactivated - content added back
+    showCallToAction: true, // Enabled call-to-action buttons
+    showStatistics: true, // Enabled company statistics
   },
   whatsapp: {
     useCustomIcon: true, // Now using custom WhatsApp image
