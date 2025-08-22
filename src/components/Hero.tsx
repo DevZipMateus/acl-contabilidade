@@ -86,7 +86,7 @@ const Hero = () => {
                 <img 
                   src="/lovable-uploads/9f12f653-9867-4dde-8c6c-798c6cc07d2c.png" 
                   alt="ALC Serviços Contábeis"
-                  className="w-24 h-auto mx-auto mb-4"
+                  className="w-48 h-auto mx-auto mb-4"
                 />
                 <h3 className="text-2xl font-bold mb-2">Por que escolher a ALC?</h3>
               </div>
