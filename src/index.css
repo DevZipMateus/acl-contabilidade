@@ -121,31 +121,43 @@
 }
 
 @layer components {
-  /* Hero Background - Responsive Strategy */
+  /* Hero Background - Improved Responsive Strategy */
   .hero-bg-responsive {
-    @apply bg-cover bg-center bg-no-repeat;
+    @apply bg-no-repeat;
+    background-attachment: scroll;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
   }
 
-  /* Mobile: Focus on center, use contain to avoid cropping */
+  /* Mobile: Controlled size with top focus to avoid excessive zoom */
   @media (max-width: 640px) {
     .hero-bg-responsive {
-      @apply bg-contain bg-center;
-      background-repeat: no-repeat;
+      background-size: 140%;
+      background-position: center 20%;
     }
   }
 
-  /* Tablet: Balanced approach with slight top focus */
+  /* Tablet: Balanced size with center positioning */
   @media (min-width: 641px) and (max-width: 1024px) {
     .hero-bg-responsive {
-      @apply bg-cover;
-      background-position: center top;
+      background-size: 120%;
+      background-position: center 30%;
     }
   }
 
-  /* Desktop: Full cover with center positioning */
+  /* Desktop: Standard cover with optimal positioning */
   @media (min-width: 1025px) {
     .hero-bg-responsive {
-      @apply bg-cover bg-center;
+      background-size: cover;
+      background-position: center center;
+    }
+  }
+
+  /* Large screens: Prevent excessive stretching */
+  @media (min-width: 1440px) {
+    .hero-bg-responsive {
+      background-size: 100%;
+      background-position: center center;
     }
   }
 
