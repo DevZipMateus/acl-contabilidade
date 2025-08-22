@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -128,34 +129,34 @@
     image-rendering: crisp-edges;
   }
 
-  /* Mobile: Reduced size for better visibility */
+  /* Mobile: Controlled size with top focus to avoid excessive zoom */
   @media (max-width: 640px) {
     .hero-bg-responsive {
-      background-size: 100%;
+      background-size: 140%;
+      background-position: center 20%;
+    }
+  }
+
+  /* Tablet: Balanced size with center positioning */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .hero-bg-responsive {
+      background-size: 120%;
       background-position: center 30%;
     }
   }
 
-  /* Tablet: Reduced size with center positioning */
-  @media (min-width: 641px) and (max-width: 1024px) {
-    .hero-bg-responsive {
-      background-size: 90%;
-      background-position: center 35%;
-    }
-  }
-
-  /* Desktop: Reduced size with optimal positioning */
+  /* Desktop: Standard cover with optimal positioning */
   @media (min-width: 1025px) {
     .hero-bg-responsive {
-      background-size: 85%;
+      background-size: cover;
       background-position: center center;
     }
   }
 
-  /* Large screens: Controlled size to prevent stretching */
+  /* Large screens: Prevent excessive stretching */
   @media (min-width: 1440px) {
     .hero-bg-responsive {
-      background-size: 80%;
+      background-size: 100%;
       background-position: center center;
     }
   }
