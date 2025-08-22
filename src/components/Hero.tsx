@@ -12,7 +12,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center text-white overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-end pb-20 text-white overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
         backgroundImage: `url('/lovable-uploads/6e7ce3d3-4ab4-46aa-8cc0-0033f150d459.png')`
