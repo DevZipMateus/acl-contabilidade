@@ -31,8 +31,8 @@ const Hero = () => {
         }} 
       />
       
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-accent/40" />
+      {/* Overlay with 70% opacity for better text readability */}
+      <div className="absolute inset-0 bg-primary/70" />
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
