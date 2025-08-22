@@ -60,33 +60,11 @@
 
   body {
     @apply bg-background text-foreground font-spectral;
-    font-size: 16px;
-    line-height: 1.6;
   }
 
-  /* Tipografia responsiva */
+  /* Tipografia */
   h1, h2, h3, h4, h5, h6 {
     @apply font-spectral;
-    line-height: 1.2;
-  }
-
-  /* Responsividade de texto base */
-  @media (max-width: 640px) {
-    body {
-      font-size: 14px;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    body {
-      font-size: 16px;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    body {
-      font-size: 18px;
-    }
   }
 
   /* Animações personalizadas */
@@ -131,52 +109,52 @@
 }
 
 @layer components {
-  /* Botões personalizados responsivos */
+  /* Botões personalizados */
   .btn-primary {
-    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-primary/20 text-sm sm:text-base;
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-primary/20;
   }
 
   .btn-accent {
-    @apply bg-accent hover:bg-accent/90 text-accent-foreground px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-accent/20 text-sm sm:text-base;
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4 rounded-xl font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 focus:ring-4 focus:ring-accent/20;
   }
 
   .btn-outline {
-    @apply border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl font-medium transition-all duration-300 focus:ring-4 focus:ring-primary/20 text-sm sm:text-base;
+    @apply border-2 border-primary/60 text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-xl font-medium transition-all duration-300 focus:ring-4 focus:ring-primary/20;
   }
 
   .btn-ghost {
-    @apply text-primary hover:bg-primary/10 px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-lg font-medium transition-all duration-300 focus:ring-4 focus:ring-primary/20 text-sm sm:text-base;
+    @apply text-primary hover:bg-primary/10 px-6 py-3 rounded-lg font-medium transition-all duration-300 focus:ring-4 focus:ring-primary/20;
   }
 
-  /* Cards responsivos */
+  /* Cards */
   .card-primary {
-    @apply bg-card border border-border rounded-xl lg:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-4 sm:p-6 lg:p-8;
+    @apply bg-card border border-border rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8;
   }
 
   .card-elevated {
-    @apply bg-card border border-border rounded-xl lg:rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 p-4 sm:p-6 lg:p-8 hover:scale-105;
+    @apply bg-card border border-border rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 p-8 hover:scale-105;
   }
 
-  /* Seções responsivas */
+  /* Seções */
   .section-padding {
-    @apply py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-20 px-4 sm:px-6 lg:px-8;
   }
 
   .container-custom {
     @apply max-w-7xl mx-auto;
   }
 
-  /* Textos responsivos */
+  /* Textos */
   .text-hero {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center leading-tight;
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold text-center leading-tight;
   }
 
   .text-section-title {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-3 sm:mb-4;
+    @apply text-3xl sm:text-4xl font-bold text-center mb-4;
   }
 
   .text-subsection-title {
-    @apply text-xl sm:text-2xl lg:text-3xl font-semibold mb-4 sm:mb-6;
+    @apply text-2xl sm:text-3xl font-semibold mb-6;
   }
 
   /* Gradientes */
@@ -192,29 +170,8 @@
     background: var(--gradient-hero);
   }
 
-  /* WhatsApp Button responsivo */
+  /* WhatsApp Button */
   .whatsapp-float {
-    @apply fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 sm:p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 focus:ring-4 focus:ring-green-500/20;
-  }
-
-  /* Utilitários de responsividade */
-  .responsive-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
-  }
-
-  .responsive-flex {
-    @apply flex flex-col sm:flex-row gap-4 sm:gap-6;
-  }
-
-  .responsive-text {
-    @apply text-sm sm:text-base lg:text-lg;
-  }
-
-  .responsive-padding {
-    @apply p-4 sm:p-6 lg:p-8;
-  }
-
-  .responsive-margin {
-    @apply m-4 sm:m-6 lg:m-8;
+    @apply fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 focus:ring-4 focus:ring-green-500/20;
   }
 }
