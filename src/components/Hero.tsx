@@ -12,14 +12,14 @@ const Hero = () => {
   };
 
   return (
-    <section id="inicio" className="relative min-h-screen flex items-end pb-20 text-white overflow-hidden">
+    <section id="inicio" className="relative min-h-screen flex items-end pb-32 text-white overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+      <div className="absolute inset-0 bg-cover bg-top bg-no-repeat" style={{
         backgroundImage: `url('/lovable-uploads/6e7ce3d3-4ab4-46aa-8cc0-0033f150d459.png')`
       }} />
       
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/60" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/50 to-accent/40" />
 
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
