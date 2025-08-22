@@ -1,22 +1,10 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 import { PROJECT_STATE } from '../config/projectState';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    if (!PROJECT_STATE.header.enableStickyBehavior) return;
-    
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -52,17 +40,8 @@ const Header = () => {
         </div>
       )}
 
-      {/* Main Header - Fully Responsive */}
-      <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-            : 'bg-white'
-        }`}
-        style={{ 
-          top: isScrolled ? '0' : (PROJECT_STATE.header.showTopBar ? '48px' : '0') 
-        }}
-      >
+      {/* Main Header - Static positioning */}
+      <header className="bg-white shadow-sm">
         <nav className="container-custom px-2 sm:px-4 lg:px-8">
           <div className="flex justify-between items-center py-3 sm:py-4">
             {/* Logo - Responsive */}
