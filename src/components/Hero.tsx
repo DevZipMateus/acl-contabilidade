@@ -1,4 +1,5 @@
 
+
 import { ArrowRight, Shield, Award, Users, CheckCircle } from 'lucide-react';
 const Hero = () => {
   const scrollToContato = () => {
@@ -12,7 +13,7 @@ const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center text-white overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url('/lovable-uploads/9352ef0f-b64b-4697-8e2f-fbcc765ddb65.png')`
+      backgroundImage: `url('/lovable-uploads/ede6aaff-c982-41f3-b96b-558ba7ec02fa.png')`
     }} />
       
       {/* Overlay for better text readability */}
@@ -113,3 +114,4 @@ const Hero = () => {
     </section>;
 };
 export default Hero;
+
