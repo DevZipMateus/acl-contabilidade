@@ -1,3 +1,4 @@
+
 import { ArrowRight, Shield, Award, Users, CheckCircle } from 'lucide-react';
 const Hero = () => {
   const scrollToContato = () => {
@@ -70,7 +71,7 @@ const Hero = () => {
           <div className="animate-scale-in">
             <div className="card-elevated backdrop-blur-md border-white/20 bg-[#6c6a6a]/[0.31]">
               <div className="text-center mb-6">
-                <img src="/lovable-uploads/9f12f653-9867-4dde-8c6c-798c6cc07d2c.png" alt="ALC Serviços Contábeis" className="w-48 h-auto mx-auto mb-4" />
+                <img src="/lovable-uploads/fe2fc3f7-ce61-4983-bdf2-0d595a9641ea.png" alt="ALC Serviços Contábeis" className="w-48 h-auto mx-auto mb-4" />
                 <h3 className="text-2xl font-bold mb-2">Por que escolher a ALC?</h3>
               </div>
               
