@@ -1,12 +1,14 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import { PROJECT_STATE } from '../config/projectState';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    if (!PROJECT_STATE.header.enableStickyBehavior) return;
+    
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
     };
@@ -25,27 +27,29 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground py-2 text-sm">
-        <div className="container-custom">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <Phone size={14} />
-                <span>(55) 98146-5271</span>
+      {/* Top Bar - Controlled by PROJECT_STATE */}
+      {PROJECT_STATE.header.showTopBar && (
+        <div className="bg-primary text-primary-foreground py-2 text-sm">
+          <div className="container-custom">
+            <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
+              <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-2">
+                  <Phone size={14} />
+                  <span>(55) 98146-5271</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Mail size={14} />
+                  <span>dirceu.conrad@gmail.com</span>
+                </div>
               </div>
               <div className="flex items-center space-x-2">
-                <Mail size={14} />
-                <span>dirceu.conrad@gmail.com</span>
+                <MapPin size={14} />
+                <span>Santa Maria/RS</span>
               </div>
-            </div>
-            <div className="flex items-center space-x-2">
-              <MapPin size={14} />
-              <span>Santa Maria/RS</span>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main Header */}
       <header 
@@ -54,7 +58,9 @@ const Header = () => {
             ? 'bg-white/95 backdrop-blur-md shadow-lg' 
             : 'bg-white'
         }`}
-        style={{ top: isScrolled ? '0' : '40px' }}
+        style={{ 
+          top: isScrolled ? '0' : (PROJECT_STATE.header.showTopBar ? '40px' : '0') 
+        }}
       >
         <nav className="container-custom">
           <div className="flex justify-between items-center py-4">
