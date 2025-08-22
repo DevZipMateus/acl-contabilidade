@@ -1,3 +1,4 @@
+
 import { ArrowRight, Shield, Award, Users, CheckCircle } from 'lucide-react';
 const Hero = () => {
   const scrollToContato = () => {
@@ -11,7 +12,7 @@ const Hero = () => {
   return <section id="inicio" className="relative min-h-screen flex items-center text-white overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-      backgroundImage: `url('/lovable-uploads/9352ef0f-b64b-4697-8e2f-fbcc765ddb65.png')`
+      backgroundImage: `url('/lovable-uploads/6e7ce3d3-4ab4-46aa-8cc0-0033f150d459.png')`
     }} />
       
       {/* Overlay for better text readability */}
@@ -70,7 +71,11 @@ const Hero = () => {
           <div className="animate-scale-in">
             <div className="card-elevated backdrop-blur-md border-white/20 bg-[#6c6a6a]/[0.31]">
               <div className="text-center mb-6">
-                
+                <img 
+                  src="/lovable-uploads/fe2fc3f7-ce61-4983-bdf2-0d595a9641ea.png" 
+                  alt="ALC Serviços Contábeis" 
+                  className="w-48 h-auto mx-auto mb-4"
+                />
                 <h3 className="text-2xl font-bold mb-2">Por que escolher a ALC?</h3>
               </div>
               
